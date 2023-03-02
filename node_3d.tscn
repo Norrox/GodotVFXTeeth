@@ -1,0 +1,415 @@
+[gd_scene load_steps=19 format=3 uid="uid://de3q5bjddhfmu"]
+
+[ext_resource type="Script" path="res://TeethVFX.gd" id="1_3f00r"]
+[ext_resource type="Texture2D" uid="uid://824xf4pyos5j" path="res://assets/TopTeeth.png" id="1_4m2bu"]
+[ext_resource type="Texture2D" uid="uid://bit6evvmu1fff" path="res://assets/BottomTeeth.png" id="2_8dte2"]
+[ext_resource type="Texture2D" uid="uid://bifr6l18eg86c" path="res://Namnlös2.png" id="3_4rq57"]
+
+[sub_resource type="Animation" id="Animation_70s2e"]
+resource_name = "Bite"
+length = 1.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopTeeth:material_overlay:albedo_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7, 0.8, 1.1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomTeeth:material_overlay:albedo_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7, 0.8, 1.1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopTeeth:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.2, 0.7, 0.9, 1.1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomTeeth:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-20, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.2, 0.7, 0.9, 1.1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:scale:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GPUParticles3D:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BottomTeeth/OmniLight3D:light_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.1)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TopTeeth/OmniLight3D:light_energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_n13vc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopTeeth:material_overlay:albedo_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomTeeth:material_overlay:albedo_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopTeeth:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomTeeth:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:scale:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GPUParticles3D:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BottomTeeth/OmniLight3D:light_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TopTeeth/OmniLight3D:light_energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ts6by"]
+_data = {
+"Bite": SubResource("Animation_70s2e"),
+"RESET": SubResource("Animation_n13vc")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o73fy"]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_4m2bu")
+emission_enabled = true
+emission = Color(1, 0.611765, 0.356863, 1)
+emission_energy_multiplier = 7.79
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyvnf"]
+transparency = 1
+albedo_texture = ExtResource("2_8dte2")
+emission_enabled = true
+emission = Color(1, 0.611765, 0.356863, 1)
+emission_energy_multiplier = 7.79
+
+[sub_resource type="Gradient" id="Gradient_x3jg0"]
+offsets = PackedFloat32Array(0, 0.729258, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5n02h"]
+gradient = SubResource("Gradient_x3jg0")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y6obu"]
+emission_shape = 1
+emission_sphere_radius = 3.1
+direction = Vector3(0, 1, 0)
+spread = 120.0
+gravity = Vector3(0, -4.8, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 75.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+linear_accel_min = 2.0
+linear_accel_max = 5.0
+scale_min = 0.1
+color_ramp = SubResource("GradientTexture1D_5n02h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb7bt"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+depth_draw_mode = 2
+no_depth_test = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_4rq57")
+emission_enabled = true
+emission = Color(0.733333, 0.4, 0, 1)
+emission_energy_multiplier = 16.0
+emission_texture = ExtResource("3_4rq57")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cohhv"]
+material = SubResource("StandardMaterial3D_sb7bt")
+size = Vector2(0.1, 0.4)
+
+[sub_resource type="Environment" id="Environment_uqdni"]
+background_mode = 1
+background_color = Color(0.14902, 0.172549, 0.223529, 1)
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_normalized = true
+glow_intensity = 2.0
+glow_blend_mode = 0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ijm05"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a80gi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kgu7n"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TeethVFX" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.53083, 0.688095, -0.492501)
+script = ExtResource("1_3f00r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TeethVFX"]
+libraries = {
+"": SubResource("AnimationLibrary_ts6by")
+}
+
+[node name="TopTeeth" type="Sprite3D" parent="TeethVFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+material_overlay = SubResource("StandardMaterial3D_o73fy")
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_4m2bu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TeethVFX/TopTeeth"]
+light_color = Color(1, 0.611765, 0.356863, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="BottomTeeth" type="Sprite3D" parent="TeethVFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+material_overlay = SubResource("StandardMaterial3D_lyvnf")
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_8dte2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TeethVFX/BottomTeeth"]
+light_color = Color(1, 0.611765, 0.356863, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="TeethVFX"]
+emitting = false
+amount = 30
+lifetime = 0.5
+explosiveness = 0.95
+randomness = 0.8
+visibility_aabb = AABB(-57.1874, -32.1609, -43.0378, 114.375, 64.3219, 86.0756)
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_y6obu")
+draw_pass_1 = SubResource("QuadMesh_cohhv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uqdni")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.988884, -0.0504254, 0.139878, -0.00812129, 0.921017, 0.389437, -0.148468, -0.386244, 0.91037, -2.02553, 2.4791, 5.4957)
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.76563, 0, -0.102722)
+mesh = SubResource("CapsuleMesh_ijm05")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -3.38183, -2.06157, -1.70582)
+mesh = SubResource("PlaneMesh_a80gi")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769887, -1.57971, 0.609189)
+mesh = SubResource("BoxMesh_kgu7n")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.322195, -1.57971, -1.33978)
+mesh = SubResource("BoxMesh_kgu7n")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.868954, -1.57971, 0.253831)
+mesh = SubResource("BoxMesh_kgu7n")
+skeleton = NodePath("../..")
